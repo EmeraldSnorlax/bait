@@ -1,5 +1,4 @@
 interface Link {
-  id: string,
   content: {
     title: string,
     description?: string,
