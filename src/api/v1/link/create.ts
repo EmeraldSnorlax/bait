@@ -1,4 +1,5 @@
 import express from 'express';
+import Link from './link';
 
 const create = express.Router();
 export default create;
@@ -6,6 +7,13 @@ export default create;
 create.use(express.json());
 
 create.post('/', (req, res) => {
-  console.log(req.body);
-  res.end();
+  const link: Link = req.body;
+  if (
+    !!link.content.title
+    && !!link.destination
+  ) {
+    
+  } else {
+
+  }
 });
