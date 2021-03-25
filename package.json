@@ -1,0 +1,11 @@
+{
+  "name": "bait",
+  "version": "1.0.0",
+  "description": "bait and switch",
+  "main": "src/main.ts",
+  "author": "EmeraldSnorlax <emeraldsnorlax@disroot.org>",
+  "license": "AGPL-3.0-or-later",
+  "dependencies": {
+    "friendly-pow": "^0.1.3"
+  }
+}
