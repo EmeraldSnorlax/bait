@@ -1,6 +1,8 @@
 # bait
 A URL shortner with custom social embeds
 
+## This is nowhere near complete yet
+
 
 Running:
 ---
