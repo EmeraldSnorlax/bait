@@ -3,10 +3,10 @@ import Link from '../../api/v1/link/link';
 import app from '../../app';
 import db from '../../db';
 
-describe('Visit a link', () => {
+describe('View a link', () => {
   it('should error on invalid links', async () => {
     const res = await supertest(app)
-      .get('/this-link-does-not-exist');
+      .get('/view/this-link-does-not-exist');
     expect(res.status).toEqual(404);
     expect(res.body).toContain('not exist');
   });
@@ -26,7 +26,7 @@ describe('Visit a link', () => {
       .send(post);
     const id = res.body.id!;
     res = await supertest(app)
-      .get(`/${id}`);
+      .get(`/view/${id}`);
     expect(res.body).toContain('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
   });
 });
