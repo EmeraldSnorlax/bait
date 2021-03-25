@@ -7,5 +7,5 @@ export default frontend;
 frontend.use('/view', view);
 
 frontend.get('/', (req, res) => {
-  res.send('Hello world');
+  res.send('hello world');
 });
