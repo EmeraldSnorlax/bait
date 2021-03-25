@@ -16,6 +16,14 @@
         "@typescript-eslint"
     ],
     "rules": {
-		 "no-console": 0
+		 "no-console": 0,
+         "import/extensions": "off"
+    },
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "extensions": [".js", ".ts"]
+            }
+        }
     }
 }
