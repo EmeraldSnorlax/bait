@@ -21,6 +21,7 @@ describe('Create a new Link', () => {
   });
 
   it('should send back an id if data is valid', async () => {
+    await db.run('CREATE TABLE IF NOT EXISTS links (id STRING PRIMARY KEY, title STRING, description STRING, image STRING, color STRING, destination STRING);');
     const post: Link = {
       content: {
         title: 'Bill Gates to buy FSF for $4.20bn',
