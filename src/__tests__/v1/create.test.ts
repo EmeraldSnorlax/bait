@@ -1,6 +1,7 @@
 import supertest from 'supertest';
 import app from '../../app';
 import Link from '../../api/v1/link/link';
+import db from '../../db';
 
 describe('Create a new Link', () => {
   it('should reject blank posts', async () => {
@@ -36,4 +37,9 @@ describe('Create a new Link', () => {
     expect(res.status).toEqual(201);
     expect(res.body).toHaveProperty('id');
   });
+});
+
+afterAll((done) => {
+  db.close();
+  done();
 });
