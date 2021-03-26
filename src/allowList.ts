@@ -106,7 +106,7 @@ const allowList: Site[] = [
   },
 ];
 
-export function getDomains() {
+function getDomains() {
   const domains: string[] = [];
   allowList.forEach((site) => {
     site.domains.forEach((domain) => {
@@ -116,4 +116,5 @@ export function getDomains() {
   return domains;
 }
 
+export const domains = getDomains();
 export default allowList;

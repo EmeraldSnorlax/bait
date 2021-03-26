@@ -1,7 +1,4 @@
-import { getDomains } from '../allowList';
-
-// Parse the allowlist to just a list of domains
-const domains = getDomains();
+import { domains } from '../allowList';
 
 describe('Each link is secure', () => {
   it('all should start with https://', async () => {
