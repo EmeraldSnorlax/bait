@@ -12,6 +12,8 @@ view.get('/:id', (req, res) => {
       if (err) {
         res.status(500).send('something went wrong looking up the link!');
         console.log(err);
+      } else if (!rows[0]) {
+        res.status(404).render('invalid.ejs');
       } else {
         res.render('redirect.ejs', { link: rows[0] });
       }
