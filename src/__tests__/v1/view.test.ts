@@ -36,13 +36,15 @@ describe('View a link', () => {
       .get('/view/this-link-does-not-exist');
 
     expect(res.status).toEqual(404);
-    expect(res.body).toContain('not exist');
+    expect(res.body).toMatch('not exist');
+    expect(res.type).toEqual('text/html');
   });
   it('should redirect valid links', async () => {
     const res = await supertest(app)
       .get(`/view/${id}`);
-
-    expect(res.body).toContain('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
+    expect(res.text).toMatch('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
+    expect(res.status).toEqual(200);
+    expect(res.type).toEqual('text/html');
   });
 });
 
