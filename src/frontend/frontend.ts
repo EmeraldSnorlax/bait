@@ -7,5 +7,5 @@ export default frontend;
 frontend.use('/view', view);
 
 frontend.get('/', (req, res) => {
-  res.send('hello world');
+  res.sendFile('views/index.html', { root: __dirname });
 });
