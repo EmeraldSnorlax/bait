@@ -1,17 +1,13 @@
 import supertest from 'supertest';
 import app from '../../app';
-import Link from '../../api/v1/link/link';
 import db from '../../db';
+import link, { notAllowedLink } from '../__mocks__/testLink';
+
+beforeAll(() => {
+  db.run('CREATE TABLE IF NOT EXISTS links (id STRING PRIMARY KEY, title STRING, description STRING, image STRING, color STRING, destination STRING);');
+});
 
 describe('Create a new Link', () => {
-  it('should reject blank posts', async () => {
-    const res = await supertest(app)
-      .post('/api/v1/create')
-      .send({});
-
-    expect(res.status).toEqual(400);
-  });
-
   it('should reject posts that dont conform to link', async () => {
     const res = await supertest(app)
       .post('/api/v1/create')
@@ -21,23 +17,22 @@ describe('Create a new Link', () => {
   });
 
   it('should send back an id if data is valid', async () => {
-    await db.run('CREATE TABLE IF NOT EXISTS links (id STRING PRIMARY KEY, title STRING, description STRING, image STRING, color STRING, destination STRING);');
-    const post: Link = {
-      content: {
-        title: 'Bill Gates to buy FSF for $4.20bn',
-        description: 'The retired multi-billionaire is embracing open-source.',
-        color: '#f9a825',
-      },
-      destination: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-    };
-
     const res = await supertest(app)
       .post('/api/v1/create')
-      .send(post);
+      .send(link);
 
     expect(res.status).toEqual(201);
     expect(res.body).toHaveProperty('id');
   });
+});
+
+it('should reject destinations that arent allowed', async () => {
+  const res = await supertest(app)
+    .post('/api/v1/create')
+    .send(notAllowedLink);
+
+  expect(res.status).toEqual(403);
+  expect(res.text).toMatch('not allowed');
 });
 
 afterAll((done) => {

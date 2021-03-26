@@ -129,4 +129,16 @@ const allowList: Site[] = [
     ],
   },
 ];
+
+function getDomains() {
+  const domains: string[] = [];
+  allowList.forEach((site) => {
+    site.domains.forEach((domain) => {
+      domains.push(domain);
+    });
+  });
+  return domains;
+}
+
+export const domains = getDomains();
 export default allowList;

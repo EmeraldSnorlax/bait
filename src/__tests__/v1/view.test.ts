@@ -1,18 +1,10 @@
 import supertest from 'supertest';
 import { v4 as uuidv4 } from 'uuid';
-import Link from '../../api/v1/link/link';
 import app from '../../app';
 import db from '../../db';
+import link from '../__mocks__/testLink';
 
 const id = uuidv4();
-const link: Link = {
-  content: {
-    title: 'Bill Gates to buy FSF for $4.20bn',
-    description: 'The retired multi-billionaire is embracing open-source.',
-    color: '#f9a825',
-  },
-  destination: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-};
 
 beforeAll(() => {
   db.serialize(() => {
