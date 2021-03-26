@@ -42,7 +42,8 @@ describe('View a link', () => {
   it('should redirect valid links', async () => {
     const res = await supertest(app)
       .get(`/view/${id}`);
-    expect(res.text).toMatch('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
+    expect(res.text).toMatch(link.destination);
+    expect(res.text).toMatch('redirect');
     expect(res.status).toEqual(200);
     expect(res.type).toEqual('text/html');
   });
