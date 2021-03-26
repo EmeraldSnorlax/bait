@@ -3,13 +3,35 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title></title>
-		<meta name="description" content="">
+		<title>Bait</title>
+		<meta name="description" content="Make links your friends can't resist to click">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="./css/dist/compiled.css">
+		<link rel="stylesheet" href="./css/style.css">
+		<script async defer src="./js/refresh.js"></script>
+		<script async defer src="./js/postLink.js"></script>
+		<script async defer src="./js/allowedSites.js"></script>
 	</head>
 	<body>
-		<h1>Hello world!</h1>
+		<div id="content">
+			<div id="messages" class="flex">
+				<div id="embed">
+					<input id="title" class="embed-field link sans-serif" placeholder="Click to edit title"></input>
+					<textarea maxlength="75" id="description" class="embed-field sans-serif" placeholder="Click to edit description"></textarea>
+					<img id="image-preview" src="">
+					<input id="image" class="embed-field link sans-serif" placeholder="Paste an image link... (Direct URLs only)">
+					<div class="flex">
+						<label for="Color" class="sans-serif embed-field">Pick a color → </label>
+						<input value="#40444B" id="color" type="color" class="embed-field sans-serif">
+					</div>
+					<div class="flex">
+						<button id="refresh" class="primary sans-serif" onclick="refresh()">Refresh the preview</button>
+						<button id="refresh" class="primary sans-serif" onclick="post()">Generate!</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="flex">
+				<input id="message-box" placeholder="Paste a link from an allowed site..."></input>
+		</div>
 	</body>
-
 </html>
