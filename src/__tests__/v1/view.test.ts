@@ -36,7 +36,7 @@ describe('View a link', () => {
       .get('/view/this-link-does-not-exist');
 
     expect(res.status).toEqual(404);
-    expect(res.body).toMatch('not exist');
+    expect(res.text).toMatch('not exist');
     expect(res.type).toEqual('text/html');
   });
   it('should redirect valid links', async () => {
