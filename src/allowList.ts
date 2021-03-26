@@ -70,10 +70,34 @@ const allowList: Site[] = [
   },
 
   {
+    name: 'StackOverflow',
+    icon: './public/icons/stackoverflow.svg',
+    domains: [
+        'https://stackoverflow.com/'
+    ],
+  },
+
+  {
     name: 'GitLab',
     icon: './public/icons/github.svg',
     domains: [
       'https://gitlab.com/',
+    ],
+  },
+
+  {
+    name: 'Code Learning',
+    icon: './public/icons/code.svg',
+    domains: [
+        'https://teamtreehouse.com/',
+        'https://khanacademy.org/',
+        'https://edx.org/',
+        'https://codewars.com/',
+        'https://freecodecamp.org/',
+        'https://theodinproject.com/',
+        'https://davidwalsh.name/',
+        'https://tutsplus.com/',
+        'https://codecademy.com/',
     ],
   },
 
