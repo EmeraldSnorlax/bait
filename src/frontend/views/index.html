@@ -13,25 +13,32 @@
 	</head>
 	<body>
 		<div id="content">
-			<div id="messages" class="flex">
+			<div id="messages">
+				<div id="message-box-container" class="flex">
+					<input id="message-box" placeholder="Paste a link from an allowed site..." onchange="imagePreview.src = imageLink.value;"></input>
+					<img id="site-icon" src="">
+			</div>
 				<div id="embed">
-					<input id="title" class="embed-field link sans-serif" placeholder="Click to edit title"></input>
-					<textarea maxlength="75" id="description" class="embed-field sans-serif" placeholder="Click to edit description"></textarea>
-					<img id="image-preview" src="">
+					<div class="flex">
+						<div>
+							<input id="title" class="embed-field link sans-serif required" placeholder="Click to edit title (required)"></input>
+							<textarea maxlength="75" id="description" class="embed-field sans-serif" placeholder="Click to edit description"></textarea>
+						</div>
+
+						<img id="image-preview" src="">
+					</div>
+
 					<input id="image" class="embed-field link sans-serif" placeholder="Paste an image link... (Direct URLs only)">
-					<div class="flex">
-						<label for="Color" class="sans-serif embed-field">Pick a color → </label>
-						<input value="#40444B" id="color" type="color" class="embed-field sans-serif">
-					</div>
-					<div class="flex">
-						<button id="refresh" class="primary sans-serif" onclick="refresh()">Refresh the preview</button>
-						<button id="refresh" class="primary sans-serif" onclick="post()">Generate!</button>
-					</div>
+				</div>
+				<div class="flex">
+					<label for="Color" class="sans-serif">Pick a color →</label>
+					<input value="#40444B" id="color" type="color" class="sans-serif">
+				</div>
+				<div class="flex">
+					<button id="refresh" class="secondary sans-serif" onclick="refresh()">Preview the image</button>
+					<button id="generate" class="primary sans-serif" onclick="post()">Generate!</button>
 				</div>
 			</div>
-		</div>
-		<div class="flex">
-				<input id="message-box" placeholder="Paste a link from an allowed site..."></input>
 		</div>
 	</body>
 </html>

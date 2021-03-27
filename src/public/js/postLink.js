@@ -1,8 +1,6 @@
-const title = document.getElementById('title');
-const description = document.getElementById('description');
-const destination = document.getElementById('message-box');
-
-
+var title = document.getElementById('title');
+var description = document.getElementById('description');
+var destination = document.getElementById('message-box');
 
 function post() {
 	const link = {
