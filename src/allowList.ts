@@ -57,8 +57,6 @@ const allowList: Site[] = [
     domains: [
       'https://youtube.com/',
       'https://youtu.be/',
-      'https://ytimg.com/',
-      'https://googleusercontent.com/',
     ],
   },
 
