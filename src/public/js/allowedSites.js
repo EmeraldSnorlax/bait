@@ -1,4 +1,5 @@
 let sites;
+let valid;
 var destination = document.getElementById('message-box');
 var siteIconEl = document.getElementById('site-icon');
 var allowedSiteList = '';
@@ -11,9 +12,10 @@ window.onload = () => {
 		sites.forEach((site) => {
 			allowedSiteList += site.name + ', '
 		});
+
 		destination.addEventListener('focusout', () => {
-			document.getElementById('site-list').innerText
 			// Validate the link when focus is lost
+			destination.value = destination.value.replace('www.', '');
 			let siteName;
 			let siteIcon;
 			let valid = false;
