@@ -1,8 +1,6 @@
 # bait
 A URL shortner with custom social embeds
 
-## This is nowhere near complete yet
-
 If you want to add more sites, they must:
 - Be SFW, or show a NSFW clickthrough (eg Reddit, Imgur)
 - Serve content over https://
