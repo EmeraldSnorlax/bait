@@ -17,8 +17,8 @@
         "@typescript-eslint"
     ],
     "rules": {
-		 "no-console": 0,
-         "import/extensions": "off"
+	"no-console": 0,
+        "import/extensions": "off"
     },
     "settings": {
         "import/resolver": {
