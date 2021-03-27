@@ -18,7 +18,8 @@ create.post('/', (req, res) => {
     domain = domain.join('');
     domain += '/';
     if (link.destination !== undefined && link.content.title !== undefined) {
-      if (!domains.includes(domain)) {
+      // Reject not allowed sites, and redirect links.
+      if (!domains.includes(domain) || req.body.destination.toLowerCase().includes('redirect')) {
         res.status(403).send('this link is not allowed!');
       } else {
         // Make the fields blank if they don't exist

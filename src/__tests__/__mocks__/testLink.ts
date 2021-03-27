@@ -18,4 +18,13 @@ export const notAllowedLink: Link = {
   destination: 'https://this-domain-is-not-allowed',
 };
 
+export const redirectLink: Link = {
+  content: {
+    title: 'Bill Gates to buy FSF for $4.20bn',
+    description: 'The retired multi-billionaire is embracing open-source.',
+    color: '#f9a825',
+  },
+  destination: 'https://youtube.com/redirect?q=snorlax.cc/',
+};
+
 export default link;
