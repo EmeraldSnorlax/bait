@@ -48,6 +48,25 @@ html {
 	font-weight: bold;
 }
 
+#image {
+	background-color: var(--darker);
+	border: none;
+	width: 100%;
+	min-height: 50px;
+	border-radius: 5px;
+	padding: 0 1em;
+	margin-bottom: 1em;
+}
+
+#refresh {
+	border: none;
+	width: auto;
+	min-height: 50px;
+	border-radius: 5px;
+	padding: 0 1em;
+	margin-bottom: 1em;
+}
+
 #color {
 	width: 75%;
 	min-height: 50px;
@@ -116,4 +135,30 @@ button {
 
 .secondary {
 	background-color: var(--grey);
+}
+
+.tooltip {
+	position: relative;
+	display: inline-block;
+}
+
+.tooltip .tooltip-text {
+	visibility: hidden;
+	width: 200px;
+	background-color: black;
+	color: white;
+	padding: 5px 0;
+	border-radius: 5px;
+	position: absolute;
+	z-index: 1;
+	top: -1em;
+	right: 105%;
+}
+
+.tooltip .tooltip-text h5, .tooltip .tooltip-text p {
+	padding: 0 1em;
+}
+
+.tooltip:hover .tooltip-text, .tooltip:active .tooltip-text {
+	visibility: visible;
 }

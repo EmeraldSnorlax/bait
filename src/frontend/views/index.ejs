@@ -16,26 +16,33 @@
 			<div id="messages">
 				<div id="message-box-container" class="flex">
 					<input id="message-box" placeholder="Paste a link from an allowed site..." onchange="imagePreview.src = imageLink.value;"></input>
-					<img id="site-icon" src="">
-			</div>
+					<div class="tooltip flex">
+						<img id="site-icon" src="./icons/help.svg" style="filter: invert(1)">
+						<div id="site-tooltip" class="tooltip-text" role="tooltip">
+							<h5 class="sans-serif">You are only allowed to redirect these sites:</h5>
+							<p id="site-list"><%= siteNames %></p>
+						</div>
+					</div>
+				</div>
 				<div id="embed">
 					<div class="flex">
 						<div>
-							<input id="title" class="embed-field link sans-serif required" placeholder="Click to edit title (required)"></input>
-							<textarea maxlength="75" id="description" class="embed-field sans-serif" placeholder="Click to edit description"></textarea>
+							<input id="title" class="embed-field link sans-serif required" placeholder="Title (required)"></input>
+							<textarea maxlength="75" id="description" class="embed-field sans-serif" placeholder="Description"></textarea>
 						</div>
 
 						<img id="image-preview" src="">
 					</div>
-
-					<input id="image" class="embed-field link sans-serif" placeholder="Paste an image link... (Direct URLs only)">
 				</div>
 				<div class="flex">
 					<label for="Color" class="sans-serif">Pick a color →</label>
 					<input value="#40444B" id="color" type="color" class="sans-serif">
 				</div>
 				<div class="flex">
-					<button id="refresh" class="secondary sans-serif" onclick="refresh()">Preview the image</button>
+					<input id="image" class="link sans-serif" placeholder="Paste an image URL...">
+					<button id="refresh" class="secondary sans-serif" onclick="refresh()">Preview</button>
+				</div>
+				<div class="flex">
 					<button id="generate" class="primary sans-serif" onclick="post()">Generate!</button>
 				</div>
 			</div>
