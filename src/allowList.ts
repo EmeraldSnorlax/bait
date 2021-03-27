@@ -86,7 +86,7 @@ const allowList: Site[] = [
   },
 
   {
-    name: 'Code Learning',
+    name: 'Development resources',
     icon: './icons/code.svg',
     domains: [
       'https://teamtreehouse.com/',
@@ -103,7 +103,7 @@ const allowList: Site[] = [
 
   // Various Linux-related things
   {
-    name: 'Linux',
+    name: 'Linux related',
     icon: './icons/linux.svg',
     domains: [
       'https://linux.org/',
