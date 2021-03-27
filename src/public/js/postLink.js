@@ -16,6 +16,8 @@ function post() {
 		alert('The destination can\'t be empty!');
 	} else if (!allowed) {
 		alert('That site isn\'t allowed!');
+	} else if (destination.value.toLowerCase().includes('redirect')) {
+		alert('You aren\'t allowed to use redirect links!');
 	} else {
 		const link = {
 			content: {
