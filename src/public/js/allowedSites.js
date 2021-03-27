@@ -5,7 +5,7 @@ var siteIconEl = document.getElementById('site-icon');
 var allowedSiteList = '';
 
 function validate() {
-	// Validate the link when focus is lost
+	// Correct the link before validating
 	destination.value = destination.value.replace('www.', '').replace('http://', 'https://');
 	if (!destination.value.startsWith('https://')) { destination.value = `https://${destination.value}`; }
 	if (destination.value.charAt(destination.value.length - 1) !== '/') { destination.value += '/'; }
