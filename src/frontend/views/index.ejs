@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,7 +20,7 @@
 			<!-- Landing -->
 			<div id="landing" aria-hidden="false">
 				<div class="flex">
-					<img height="64" src="./icons/link.svg" style="filter: invert(1)">
+					<img alt="" height="64" width="64" src="./icons/link.svg" style="filter: invert(1)">
 					<h1 class="sans-serif">Linkbait</h1>
 				</div>
 				<p class="sans-serif center">Make links your friends can't resist clicking.</p>
@@ -41,14 +41,14 @@
 
 				<div class="flex">
 					<button id="goto-embed" class="landing-button flex primary" onclick="gotoEmbed()">
-						<img height="32" src="./icons/link.svg">
+						<img alt="" height="32" width="32" src="./icons/link.svg">
 						<p class="sans-serif primary">Make a link</p>
 					</button>
 				</div>
 				<div class="flex">
 					<a style="width: 100%" href="https://github.com/EmeraldSnorlax/bait" target="_blank" rel="noopener" class="flex">
 						<button class="landing-button flex">
-							<img height="32" src="./icons/code.svg">
+							<img alt="" height="32" width="32" src="./icons/code.svg">
 							<p class="sans-serif">Source Code (GNU AGPLv3)</p>
 						</button>
 					</a>
@@ -60,7 +60,7 @@
 				<div id="message-box-container" class="flex">
 					<input id="message-box" placeholder="Paste a link from an allowed site..." onchange="imagePreview.src = imageLink.value;"></input>
 					<div class="tooltip flex">
-						<img id="site-icon" src="./icons/help.svg" style="filter: invert(1)">
+						<img alt="" id="site-icon" src="./icons/help.svg" style="filter: invert(1)">
 						<div id="site-tooltip" class="tooltip-text" role="tooltip">
 							<h5 class="sans-serif">You are only allowed to redirect these sites:</h5>
 							<p id="site-list"><%= siteNames %></p>
@@ -74,7 +74,7 @@
 							<textarea maxlength="75" id="description" class="embed-field sans-serif" placeholder="Description"></textarea>
 						</div>
 
-						<img id="image-preview" src="">
+						<img alt="A preview of your optional uploaded image." id="image-preview" src="">
 					</div>
 				</div>
 				<div class="flex">
