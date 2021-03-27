@@ -1,7 +1,7 @@
 import supertest from 'supertest';
 import app from '../../app';
 import db from '../../db';
-import link, { notAllowedLink } from '../__mocks__/testLink';
+import link, { notAllowedLink, redirectLink } from '../__mocks__/testLink';
 
 beforeAll(() => {
   db.run('CREATE TABLE IF NOT EXISTS links (id STRING PRIMARY KEY, title STRING, description STRING, image STRING, color STRING, destination STRING);');
@@ -24,15 +24,24 @@ describe('Create a new Link', () => {
     expect(res.status).toEqual(201);
     expect(res.body).toHaveProperty('id');
   });
-});
 
-it('should reject destinations that arent allowed', async () => {
-  const res = await supertest(app)
-    .post('/api/v1/create')
-    .send(notAllowedLink);
+  it('should reject destinations that arent allowed', async () => {
+    const res = await supertest(app)
+      .post('/api/v1/create')
+      .send(notAllowedLink);
 
-  expect(res.status).toEqual(403);
-  expect(res.text).toMatch('not allowed');
+    expect(res.status).toEqual(403);
+    expect(res.text).toMatch('not allowed');
+  });
+
+  it('should reject redirect links', async () => {
+    const res = await supertest(app)
+      .post('/api/v1/create')
+      .send(redirectLink);
+
+    expect(res.status).toEqual(403);
+    expect(res.text).toMatch('not allowed');
+  });
 });
 
 afterAll((done) => {

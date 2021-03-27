@@ -20,6 +20,7 @@ function validate() {
 				valid = true;
 			}
 		});
+		if (destination.value.toLowerCase().includes('redirect')) { valid = false; }
 	});
 			
 	// Style the Icon
