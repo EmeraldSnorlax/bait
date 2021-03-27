@@ -11,6 +11,25 @@ html {
 	padding: 0 1em;
 }
 
+a {
+	text-decoration: none;
+}
+
+.landing-button {
+	width: 75%;
+	background-color: var(--grey);
+	margin: 1em;
+}
+
+.landing-button img {
+	margin-right: 1em;
+}
+
+.landing-button:not(.primary) img {
+	filter: invert(1);
+}
+
+
 #content {
 	margin: 40px auto;
 	max-width: 800px;
@@ -118,8 +137,7 @@ html {
 }
 
 .hidden {
-	opacity: 0;
-	transition: opacity 0.5s ease-in-out;
+	display: none;
 }
 
 button {
@@ -131,6 +149,7 @@ button {
 
 .primary {
 	background-color: var(--blurple);
+	color: black;
 }
 
 .secondary {
@@ -161,4 +180,9 @@ button {
 
 .tooltip:hover .tooltip-text, .tooltip:active .tooltip-text {
 	visibility: visible;
+}
+
+footer{
+	margin-top: 50px;
+	margin-bottom: 16px;
 }

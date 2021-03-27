@@ -3,17 +3,57 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Bait</title>
-		<meta name="description" content="Make links your friends can't resist to click">
+		<title>Linkbait</title>
+		<meta name="description" content="Make links your friends can't resist clicking.">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="./css/style.css">
 		<script async defer src="./js/refresh.js"></script>
 		<script async defer src="./js/postLink.js"></script>
 		<script async defer src="./js/allowedSites.js"></script>
+		<script async defer src="./js/gotoEmbed.js"></script>
 	</head>
 	<body>
 		<div id="content">
-			<div id="messages">
+			<!-- Landing -->
+			<div id="landing" aria-hidden="false">
+				<div class="flex">
+					<img height="64" src="./icons/link.svg" style="filter: invert(1)">
+					<h1 class="sans-serif">Linkbait</h1>
+				</div>
+				<p class="sans-serif center">Make links your friends can't resist clicking.</p>
+				<hr>
+
+				<noscript>
+					<style>
+						#goto-embed { display: none; }
+					</style>
+					<div class="flex">
+						<div>
+							<p class="sans-serif">You need to enable JavaScript.</p>
+							<p class="sans-serif">This site has no trackers or garbage, if that's what you're worried about.</p>
+							<p class="sans-serif">The source code is below.</p>
+						</div>
+					</div>
+				</noscript>
+
+				<div class="flex">
+					<button id="goto-embed" class="landing-button flex primary" onclick="gotoEmbed()">
+						<img height="32" src="./icons/link.svg">
+						<p class="sans-serif primary">Make a link</p>
+					</button>
+				</div>
+				<div class="flex">
+					<a style="width: 100%" href="https://github.com/EmeraldSnorlax/bait" target="_blank" rel="noopener" class="flex">
+						<button class="landing-button flex">
+							<img height="32" src="./icons/code.svg">
+							<p class="sans-serif">Source Code (GNU AGPLv3)</p>
+						</button>
+					</a>
+				</div>
+			</div>
+
+			<!-- Generating the link -->
+			<div class="hidden" aria-hidden="true" id="messages">
 				<div id="message-box-container" class="flex">
 					<input id="message-box" placeholder="Paste a link from an allowed site..." onchange="imagePreview.src = imageLink.value;"></input>
 					<div class="tooltip flex">
@@ -46,6 +86,14 @@
 					<button id="generate" class="primary sans-serif" onclick="post()">Generate!</button>
 				</div>
 			</div>
+			<footer class="flex">
+					<div class="sans-serif center">
+						<p>Copyleft EmeraldSnorlax + contributors</p>
+						<p>GNU AGPLv3</p>
+						<br>
+						<p>I can make no guarantees about uptime or reliability of posted links.</p>
+					</div>
+			</footer>
 		</div>
 	</body>
 </html>
