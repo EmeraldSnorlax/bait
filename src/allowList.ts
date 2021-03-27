@@ -17,7 +17,7 @@ interface Site {
 const allowList: Site[] = [
   {
     name: 'Reddit',
-    icon: './public/icons/reddit.svg',
+    icon: './icons/reddit.svg',
     domains: [
       'https://reddit.com/',
       'https://old.reddit.com/',
@@ -29,7 +29,7 @@ const allowList: Site[] = [
 
   {
     name: 'Twitter',
-    icon: './public/icons/twitter.svg',
+    icon: './icons/twitter.svg',
     domains: [
       'https://twitter.com/',
       'https://mobile.twitter.com/',
@@ -42,7 +42,7 @@ const allowList: Site[] = [
 
   {
     name: 'Imgur',
-    icon: './public/icons/imgur.svg',
+    icon: './icons/imgur.svg',
     domains: [
       'https://imgur.com/',
       // Enable this at your own risk, it may link straight to a NSFW image!
@@ -52,7 +52,7 @@ const allowList: Site[] = [
 
   {
     name: 'YouTube',
-    icon: './public/icons/youtube.svg',
+    icon: './icons/youtube.svg',
     domains: [
       'https://youtube.com/',
       'https://youtu.be/',
@@ -63,7 +63,7 @@ const allowList: Site[] = [
 
   {
     name: 'GitHub',
-    icon: './public/icons/github.svg',
+    icon: './icons/github.svg',
     domains: [
       'https://github.com/',
     ],
@@ -71,7 +71,7 @@ const allowList: Site[] = [
 
   {
     name: 'StackOverflow',
-    icon: './public/icons/stackoverflow.svg',
+    icon: './icons/stackoverflow.svg',
     domains: [
       'https://stackoverflow.com/',
     ],
@@ -79,7 +79,7 @@ const allowList: Site[] = [
 
   {
     name: 'GitLab',
-    icon: './public/icons/gitlab.svg',
+    icon: './icons/gitlab.svg',
     domains: [
       'https://gitlab.com/',
     ],
@@ -87,7 +87,7 @@ const allowList: Site[] = [
 
   {
     name: 'Code Learning',
-    icon: './public/icons/code.svg',
+    icon: './icons/code.svg',
     domains: [
       'https://teamtreehouse.com/',
       'https://khanacademy.org/',
@@ -104,7 +104,7 @@ const allowList: Site[] = [
   // Various Linux-related things
   {
     name: 'Linux',
-    icon: './public/icons/linux.svg',
+    icon: './icons/linux.svg',
     domains: [
       'https://linux.org/',
       'https://kernel.org/',

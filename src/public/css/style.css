@@ -4,9 +4,16 @@ html {
 	background-color: var(--base);
 }
 
+#site-icon {
+	max-width: 100%;
+	height: 3em;
+	margin-bottom: 1em;
+	padding: 0 1em;
+}
+
 #content {
 	margin: 40px auto;
-	max-width: 650px;
+	max-width: 800px;
 	padding: 0 10px;
 }
 
@@ -16,14 +23,12 @@ html {
 
 #message-box {
 	background-color: var(--grey);
-	width: 85%;
+	width: 100%;
 	border: none;
 	color: white;
 	height: 3em;
 	border-radius: 5px;
 	padding: 0 1em;
-	position: fixed;
-	bottom: 0px;
 	margin-bottom: 1em;
 }
 
@@ -43,9 +48,31 @@ html {
 	font-weight: bold;
 }
 
+#image {
+	background-color: var(--darker);
+	border: none;
+	width: 100%;
+	min-height: 50px;
+	border-radius: 5px;
+	padding: 0 1em;
+	margin-bottom: 1em;
+}
+
+#refresh {
+	border: none;
+	width: auto;
+	min-height: 50px;
+	border-radius: 5px;
+	padding: 0 1em;
+	margin-bottom: 1em;
+}
+
 #color {
-	width: 150%;
-	min-height: 50px
+	width: 75%;
+	min-height: 50px;
+	background-color: var(--base);
+	border: none;
+	margin: 1em 0;
 }
 
 .embed-field, .embed-field::placeholder {
@@ -60,10 +87,10 @@ html {
 	overflow: hidden;
 }
 
-img {
+#image-preview {
 	border-radius: 4px;
-	max-height: 300px;
-	max-width: 100%;
+	max-width: 30%;
+	margin-left: 1em;
 }
 
 .embed-field.link, .embed-field.link::placeholder {
@@ -95,10 +122,43 @@ img {
 	transition: opacity 0.5s ease-in-out;
 }
 
-.primary {
-	background-color: var(--blurple);
+button {
 	border: none;
 	border-radius: 5px;
 	padding: 1em;
 	margin: 0 0.5em;
+}
+
+.primary {
+	background-color: var(--blurple);
+}
+
+.secondary {
+	background-color: var(--grey);
+}
+
+.tooltip {
+	position: relative;
+	display: inline-block;
+}
+
+.tooltip .tooltip-text {
+	visibility: hidden;
+	width: 200px;
+	background-color: black;
+	color: white;
+	padding: 5px 0;
+	border-radius: 5px;
+	position: absolute;
+	z-index: 1;
+	top: -1em;
+	right: 105%;
+}
+
+.tooltip .tooltip-text h5, .tooltip .tooltip-text p {
+	padding: 0 1em;
+}
+
+.tooltip:hover .tooltip-text, .tooltip:active .tooltip-text {
+	visibility: visible;
 }
