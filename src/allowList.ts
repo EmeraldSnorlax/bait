@@ -52,7 +52,7 @@ const allowList: Site[] = [
 
   {
     name: 'YouTube',
-    icon: './public/icons/imgur.svg',
+    icon: './public/icons/youtube.svg',
     domains: [
       'https://youtube.com/',
       'https://youtu.be/',
@@ -79,7 +79,7 @@ const allowList: Site[] = [
 
   {
     name: 'GitLab',
-    icon: './public/icons/github.svg',
+    icon: './public/icons/gitlab.svg',
     domains: [
       'https://gitlab.com/',
     ],
