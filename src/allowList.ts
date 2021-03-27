@@ -22,7 +22,7 @@ const allowList: Site[] = [
       'https://reddit.com/',
       'https://old.reddit.com/',
       'https://redd.it/',
-      'https://i.reddit.com', // To the one person who still uses this thing
+      'https://i.reddit.com/', // To the one person who still uses this thing
       // Enable this at your own risk, it may link straight to a NSFW image!
       // 'https://i.redd.it/',
     ],
