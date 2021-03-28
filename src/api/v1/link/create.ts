@@ -3,7 +3,6 @@ import { v4 as uuidv4 } from 'uuid';
 import db from '../../../db';
 import Link from './link';
 import { domains } from '../../../allowList';
-import { decode } from 'node:punycode';
 
 const create = express.Router();
 export default create;
@@ -27,6 +26,7 @@ create.post('/', (req, res) => {
         !domains.includes(domain)
         || link.destination.toLowerCase().includes('redirect')
         || (!imgur && link.content.image)
+        || link.destination.includes('%')
       ) {
         res.status(403).send('this link is not allowed! check the allowed sites list + we only allow images from i.imgur.com!');
       } else {
