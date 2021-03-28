@@ -1,13 +1,33 @@
 import supertest from 'supertest';
 import app from '../../app';
 import db from '../../db';
-import link, { notAllowedLink, redirectLink } from '../__mocks__/testLink';
+import link, {
+  badImageLink, goodImageLink, notAllowedLink, redirectLink,
+} from '../__mocks__/testLink';
 
 beforeAll(() => {
   db.run('CREATE TABLE IF NOT EXISTS links (id STRING PRIMARY KEY, title STRING, description STRING, image STRING, color STRING, destination STRING);');
 });
 
 describe('Create a new Link', () => {
+  it('should allow images from i.imgur.com', async () => {
+    const res = await supertest(app)
+      .post('/api/v1/create')
+      .send(goodImageLink);
+
+    expect(res.status).toEqual(201);
+    expect(res.body).toHaveProperty('id');
+  });
+
+  it('should reject links where the image isnt from i.imgur.com', async () => {
+    const res = await supertest(app)
+      .post('/api/v1/create')
+      .send(badImageLink);
+
+    expect(res.status).toEqual(403);
+    expect(res.text).toMatch('not allowed');
+  });
+
   it('should reject posts that dont conform to link', async () => {
     const res = await supertest(app)
       .post('/api/v1/create')

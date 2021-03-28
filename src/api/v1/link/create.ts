@@ -17,10 +17,16 @@ create.post('/', (req, res) => {
     domain[1] = '//';
     domain = domain.join('');
     domain += '/';
+
+    // Reject not allowed sites, and redirect links. We also only allow images for Imgur.
+    const imgur = link.content.image?.startsWith('https://i.imgur.com/');
     if (link.destination !== undefined && link.content.title !== undefined) {
-      // Reject not allowed sites, and redirect links.
-      if (!domains.includes(domain) || req.body.destination.toLowerCase().includes('redirect')) {
-        res.status(403).send('this link is not allowed!');
+      if (
+        !domains.includes(domain)
+        || link.destination.toLowerCase().includes('redirect')
+        || (!imgur && link.content.image)
+      ) {
+        res.status(403).send('this link is not allowed! check the allowed sites list + we only allow images from i.imgur.com!');
       } else {
         // Make the fields blank if they don't exist
         link.content.description = link.content.description || '';
