@@ -95,15 +95,17 @@ a {
 }
 
 .embed-field, .embed-field::placeholder {
-	background-color: var(--darker);
+	background-color: var(--base);
 	border: none;
+	padding: 0.2em;
+	border-radius: 5px;
 	width: 100%;
 	color: white;
 	font-size: larger;
 	margin-bottom: 1em;
 	overflow-wrap: break-word;
 	resize: none;
-	overflow: hidden;
+	overflow: auto;
 }
 
 #image-preview {
