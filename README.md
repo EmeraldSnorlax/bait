@@ -4,6 +4,7 @@ A URL shortner with custom social embeds
 If you want to add more sites, they must:
 - Be SFW, or show a NSFW clickthrough (eg Reddit, Imgur)
 - Serve content over https://
+- Have an icon from [Simple Icons](https://simpleicons.org/) (for brands) or a [sharp Material Design icon](https://material.io/resources/icons/?style=sharp) (for categories).
 
 Send a pull request editing [this file](https://github.com/EmeraldSnorlax/bait/blob/main/src/allowList.ts). Ensure that it ends with a trailing slash.
 
