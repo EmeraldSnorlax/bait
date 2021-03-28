@@ -1,8 +1,6 @@
 # bait
 A URL shortner with custom social embeds
 
-[![Tests](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2FEmeraldSnorlax%2Fbait%2Fbadge%3Fref%3Dmain&style=for-the-badge)](https://actions-badge.atrox.dev/EmeraldSnorlax/bait/goto?ref=main)
-
 [![forthebadge](https://forthebadge.com/images/badges/built-with-resentment.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/made-with-typescript.svg)](https://forthebadge.com)
 
