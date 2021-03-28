@@ -1,6 +1,9 @@
 # bait
 A URL shortner with custom social embeds
 
+[![forthebadge](https://forthebadge.com/images/badges/built-with-resentment.svg)](https://forthebadge.com)
+[![forthebadge](https://forthebadge.com/images/badges/made-with-typescript.svg)](https://forthebadge.com)
+
 If you want to add more sites, they must:
 - Be SFW, or show a NSFW clickthrough (eg Reddit, Imgur)
 - Serve content over https://
