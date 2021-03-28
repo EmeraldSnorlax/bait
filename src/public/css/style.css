@@ -4,6 +4,18 @@ html {
 	background-color: var(--base);
 }
 
+.no-wrap {
+	white-space: nowrap;
+}
+
+#color-picker-button {
+	background-color: var(--grey);
+	padding: 0.3em 1em;
+	margin: 1em 0;
+	width: 100%;
+	border-radius: 5px;
+}
+
 #site-icon {
 	max-width: 100%;
 	height: 3em;
@@ -87,11 +99,17 @@ a {
 }
 
 #color {
-	width: 75%;
-	min-height: 50px;
-	background-color: var(--base);
+	width: 100%;
+	background-color: var(--grey);
+	border-radius: 0;
 	border: none;
-	margin: 1em 0;
+	height: 24px;
+	width: 48px;
+}
+
+#color-icon {
+	height: 48px;
+	fill: white;
 }
 
 .embed-field, .embed-field::placeholder {
@@ -112,6 +130,8 @@ a {
 	border-radius: 4px;
 	max-width: 30%;
 	margin-left: 1em;
+	color: white;
+	font-family: 'Inter', sans-serif;
 }
 
 .embed-field.link, .embed-field.link::placeholder {

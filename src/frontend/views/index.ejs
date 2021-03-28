@@ -63,7 +63,7 @@
 						<img alt="" id="site-icon" src="./icons/help.svg" style="filter: invert(1)">
 						<div id="site-tooltip" class="tooltip-text" role="tooltip">
 							<h5 class="sans-serif">You are only allowed to redirect these sites:</h5>
-							<p id="site-list"><%= siteNames %></p>
+							<p id="site-list" class="sans-serif"><%= siteNames %></p>
 						</div>
 					</div>
 				</div>
@@ -74,15 +74,20 @@
 							<textarea maxlength="75" id="description" class="embed-field sans-serif" placeholder="Description"></textarea>
 						</div>
 
-						<img alt="A preview of your optional uploaded image." id="image-preview" src="">
+						<img alt="" id="image-preview" src="">
 					</div>
 				</div>
+				<!-- Colour Picker -->
 				<div class="flex">
-					<label for="Color" class="sans-serif">Pick a color →</label>
-					<input value="#40444B" id="color" type="color" class="sans-serif">
+						<label id="color-picker-button" for="color" class="flex">
+							<%- include('../../public/icons/colorize.svg') %>
+							<p style="margin-left: 1em;"class="sans-serif no-wrap">Pick a colour</p>
+							<input type="color" id="color">
+						</label>
 				</div>
+
 				<div class="flex">
-					<input id="image" class="link sans-serif" placeholder="Paste an i.imgur.com link...">
+					<input id="image" class="link sans-serif" placeholder="https://i.imgur.com/">
 					<button id="refresh" class="secondary sans-serif" onclick="refresh()">Preview</button>
 				</div>
 				<div class="flex">

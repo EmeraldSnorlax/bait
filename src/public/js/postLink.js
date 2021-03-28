@@ -19,7 +19,7 @@ function post() {
 	} else if (destination.value.toLowerCase().includes('redirect')) {
 		alert('You aren\'t allowed to use redirect links!');
 	} else if (image.value && !image.value.startsWith('https://i.imgur.com/')) {
-		alert('You are only allowed to use https://i.imgur.com/ links!');
+		alert('You are only allowed to use https://i.imgur.com/ images!');
 	} else {
 		const link = {
 			content: {
