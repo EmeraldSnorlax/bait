@@ -3,6 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 import db from '../../../db';
 import Link from './link';
 import { domains } from '../../../allowList';
+import { decode } from 'node:punycode';
 
 const create = express.Router();
 export default create;
@@ -17,6 +18,7 @@ create.post('/', (req, res) => {
     domain[1] = '//';
     domain = domain.join('');
     domain += '/';
+    link.destination = decodeURI(link.destination);
 
     // Reject not allowed sites, and redirect links. We also only allow images for Imgur.
     const imgur = link.content.image?.startsWith('https://i.imgur.com/');

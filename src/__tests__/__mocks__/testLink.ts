@@ -27,6 +27,15 @@ export const redirectLink: Link = {
   destination: 'https://youtube.com/redirect?q=snorlax.cc/',
 };
 
+export const encodedRedirectLink: Link = {
+  content: {
+    title: 'Bill Gates to buy FSF for $4.20bn',
+    description: 'The retired multi-billionaire is embracing open-source.',
+    color: '#f9a825',
+  },
+  destination: 'https://youtube.com/%72edirect?q=snorlax.cc/',
+};
+
 export const badImageLink: Link = {
   content: {
     title: 'Bill Gates to buy FSF for $4.20bn',

@@ -16,7 +16,7 @@ function post() {
 		alert('The destination can\'t be empty!');
 	} else if (!allowed) {
 		alert('That site isn\'t allowed!');
-	} else if (destination.value.toLowerCase().includes('redirect')) {
+	} else if (destination.value.decodeURI().toLowerCase().includes('redirect')) {
 		alert('You aren\'t allowed to use redirect links!');
 	} else if (image.value && !image.value.startsWith('https://i.imgur.com/')) {
 		alert('You are only allowed to use https://i.imgur.com/ images!');

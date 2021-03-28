@@ -2,7 +2,7 @@ import supertest from 'supertest';
 import app from '../../app';
 import db from '../../db';
 import link, {
-  badImageLink, goodImageLink, notAllowedLink, redirectLink,
+  badImageLink, encodedRedirectLink, goodImageLink, notAllowedLink, redirectLink,
 } from '../__mocks__/testLink';
 
 beforeAll(() => {
@@ -58,6 +58,15 @@ describe('Create a new Link', () => {
     const res = await supertest(app)
       .post('/api/v1/create')
       .send(redirectLink);
+
+    expect(res.status).toEqual(403);
+    expect(res.text).toMatch('not allowed');
+  });
+
+  it('should reject links, even if they are encoded', async () => {
+    const res = await supertest(app)
+      .post('/api/v1/create')
+      .send(encodedRedirectLink);
 
     expect(res.status).toEqual(403);
     expect(res.text).toMatch('not allowed');
