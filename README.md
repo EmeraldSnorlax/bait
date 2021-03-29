@@ -12,6 +12,12 @@ If you want to add more sites, they must:
 
 Send a pull request editing [this file](https://github.com/EmeraldSnorlax/bait/blob/main/src/allowList.ts). Ensure that it ends with a trailing slash.
 
+Bugs or exploits
+---
+
+If you find a bug or exploit with link creation, I'd appreciate it if you notified me by opening an issue.
+Feel free to also add a a mock link showcasing the bug to [here](https://github.com/EmeraldSnorlax/bait/blob/main/src/__tests__/__mocks__/testLink.ts).
+
 
 Running:
 ---
